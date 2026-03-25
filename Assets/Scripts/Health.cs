@@ -15,6 +15,7 @@ public class Health
     }
     public int GetLife()
     {
+        Debug.Log("Current Life:" + value);
         return value;
     }
 
