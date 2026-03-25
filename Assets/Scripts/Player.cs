@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] string PlayerName;
-    private Health health = new();
+    [SerializeField] private Health health = new();
     [SerializeField]private Weapon weapon;
 
 
@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     }
     public void Shoot(Player Target)
     {
+
+        Debug.Log(PlayerName + "|");
         weapon.Shoot(Target);
     }
 

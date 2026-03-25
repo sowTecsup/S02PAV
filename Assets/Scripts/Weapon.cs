@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private int damage;
-    private int ammo = 10;
+    [SerializeField] private int damage;
+    [SerializeField] private int ammo = 10;
     void Start()
     {
         
@@ -12,7 +12,10 @@ public class Weapon : MonoBehaviour
     {
         //->
         if (target == null || ammo <= 0)
-            return;
+        {
+            Debug.Log("No tiene munición");
+            return; 
+        }
 
 
         //->if

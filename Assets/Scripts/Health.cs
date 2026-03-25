@@ -1,9 +1,12 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+[Serializable]
 public class Health 
 {
-    private int value;
+    [SerializeField] private int value = 10;
 
     public void TakeDamage(int damage)
     {
