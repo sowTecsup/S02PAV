@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log(PlayerName + "|")
+            Debug.Log(PlayerName + "|");
             health.GetLife();
         }
     }
