@@ -38,16 +38,23 @@ public class Player : MonoBehaviour
                 {
                     inputs.Player1.Move.performed += OnMoveAction;
                     inputs.Player1.Move.canceled += OnMoveAction;
+                    inputs.Player1.Attack.performed += OnAttackAction;
                 }
                 break;
             case PlayerController.Player2:
                 {
                     inputs.Player2.Move.performed += OnMoveAction;
                     inputs.Player2.Move.canceled += OnMoveAction;
+                    inputs.Player2.Attack.performed += OnAttackAction;
                 }
                 break;
         }
 
+    }
+
+    private void OnAttackAction(InputAction.CallbackContext context)
+    {
+        Shoot(TARGET);
     }
 
     private void OnMoveAction(InputAction.CallbackContext context)
@@ -64,24 +71,25 @@ public class Player : MonoBehaviour
     {
         transform.position += (Vector3)moveInput * speed * Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+       /* if(Input.GetKeyDown(KeyCode.Space))
         {
             Shoot(TARGET);
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log(PlayerName + "|");
-            health.GetLife();
+            Debug.Log(PlayerName + "|" + health.GetLife());
+            
         }
     }
     public void TakeDamage(int damage)
     {
+        Debug.Log(PlayerName + " : Ouch!" );
         health.TakeDamage(damage);
     }
     public void Shoot(Player Target)
     {
 
-        Debug.Log(PlayerName + "|");
+        Debug.Log(PlayerName + " : try to shoot");
         weapon.Shoot(Target);
     }
 

@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
         {
             target.TakeDamage(damage);
             ammo--;
-            Debug.Log("Shoot");
+        
         }
         else
         {
