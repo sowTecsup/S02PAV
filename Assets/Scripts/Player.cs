@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+    private Health health = new();
+
     void Start()
     {
         
@@ -12,4 +13,10 @@ public class Player : MonoBehaviour
     {
         
     }
+    public void TakeDamage(int damage)
+    {
+        health.TakeDamage(damage);
+    }
+
+   // public void TakeDamage(int damage) =>  health.TakeDamage(damage);
 }
